@@ -7,8 +7,8 @@ const questions = [
     "What is the title of your project?",
     "Please enter your project desctription:",
     "Input project installation instructions:",
-    "Please enter any necesary usage instructions:",
-    "Please select a liscense:", "Please list contribution instructions:",
+    "Please enter any necessary usage instructions:",
+    "Please select a license:", "Please list contribution instructions:",
     "Please supply your github profile address:",
     "Please supply your email:"
 ];
@@ -37,7 +37,7 @@ inquirer.prompt([
     {
         type: 'list',
         message: questions[4],
-        name: 'liscense',
+        name: 'license',
         choices: ['MIT']
     },
     {
@@ -56,9 +56,15 @@ inquirer.prompt([
         name: 'email'
     },
     
-]).then((data) => {
+]).then((response) => {
+    const data = response;
+    const filename = `${data.title.toLowerCase().split(' ').join('')}README.md`;
     console.log(data);
+    console.log(filename);
 })
+
+
+
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
