@@ -4,6 +4,7 @@ const fs = require("fs");
 // TODO: Create an array of questions for user input
 const questions = [
     // Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
+    "What is the title of your project?",
     "Please enter your project desctription:",
     "Input project installation instructions:",
     "Please enter any necesary usage instructions:",
@@ -16,38 +17,43 @@ inquirer.prompt([
     {
         type: 'input',
         message: questions[0],
-        name: 'description'
+        name: 'title'
     },
     {
         type: 'input',
         message: questions[1],
-        name: 'installation'
+        name: 'description'
     },
     {
         type: 'input',
         message: questions[2],
+        name: 'installation'
+    },
+    {
+        type: 'input',
+        message: questions[3],
         name: 'usage'
     },
     {
         type: 'list',
-        message: questions[3],
+        message: questions[4],
         name: 'liscense',
         choices: ['MIT']
     },
     {
         type: 'input',
-        message: questions[4],
+        message: questions[5],
         name: 'contributing'
     },
     {
         type: 'input',
-        message: questions[5],
-        name: 'questions github'
+        message: questions[6],
+        name: 'github'
     },
     {
         type: 'email',
-        message: questions[6],
-        name: 'questions email'
+        message: questions[7],
+        name: 'email'
     },
     
 ]).then((data) => {
