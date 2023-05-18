@@ -15,40 +15,47 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
+function writeToFile(filename, data) {
     const readmeContent = `
-    # ${data.title}
+# ${data.title}
 
-    ## Description
+## Description
 
-    ${data.description}
+${data.description}
 
-    ##Table of Contents:
+##Table of Contents:
 
-    ##Installation:
+##Installation:
 
-    ${data.imstallation}
+${data.imstallation}
 
-    ##Usage Instructions:
+##Usage Instructions:
 
-    ${data.usage}
+${data.usage}
 
-    ## Liscense:
+## Liscense:
 
-    ${data.liscense}
+${data.license}
 
-    ##How to contribute:
+##How to contribute:
 
-    ${data.contribution}
+${data.contribution}
 
-    ##Contact and Questions:
+##Contact and Questions:
 
-    ${data.github}
-    ${data.email}
+${data.github}
+${data.email}
 
-    `
+    `;
 
-    } 
+    fs.writeFile(filename, readmeContent, (err) => {
+        if(err) {
+            console.error(err);
+        } else {
+            console.log(`${filename} succesfully vreated!`);
+        }
+    });
+
 }
 
 // TODO: Create a function to initialize app
