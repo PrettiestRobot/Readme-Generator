@@ -8,14 +8,47 @@ const questions = [
     "Please enter your project desctription:",
     "Input project installation instructions:",
     "Please enter any necessary usage instructions:",
-    "Please select a license:", "Please list contribution instructions:",
+    "Please select a license:", 
+    "Please list contribution instructions:",
     "Please supply your github profile address:",
     "Please supply your email:"
 ];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    console.log(data);
+    const readmeContent = `
+    # ${data.title}
+
+    ## Description
+
+    ${data.description}
+
+    ##Table of Contents:
+
+    ##Installation:
+
+    ${data.imstallation}
+
+    ##Usage Instructions:
+
+    ${data.usage}
+
+    ## Liscense:
+
+    ${data.liscense}
+
+    ##How to contribute:
+
+    ${data.contribution}
+
+    ##Contact and Questions:
+
+    ${data.github}
+    ${data.email}
+
+    `
+
+    } 
 }
 
 // TODO: Create a function to initialize app
