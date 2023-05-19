@@ -63,54 +63,55 @@ function writeToFile(filename, data) {
   }  
 
 
-    const readmeContent = `
+const readmeContent = `
 # ${data.title}
 
 ${badge}
 
-## Table of Contents:
+## Table of Contents
 
 - [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
-- [how to contribute](#contribute)
+- [How to Contribute](#contribute)
 - [Contact](#contact)
 
 ## Description <a name="description"></a>
 
 ${data.description}
 
-##Installation: <a name="installation"></a>
+## Installation <a name="installation"></a>
 
 ${data.installation}
 
-##Usage instructions: <a name="usage"></a>
+## Usage instructions <a name="usage"></a>
 
 ${data.usage}
 
-## License: <a name="license"></a>
+## License <a name="license"></a>
 
-This project is licensed under the ${data.license}(LICENSE).
+This project is licensed under the ${data.license} license.
 
-##How to contribute: <a name="contribute"></a>
+## How to contribute <a name="contribute"></a>
 
-${data.contribution}
+${data.contributing}
 
-##Contact and questions: <a name="contact"></a>
+## Contact and questions <a name="contact"></a>
 
-${data.github}
-${data.email}
+GitHub: ${data.github}
 
-    `;
+Email: ${data.email}
+`;
 
-    fs.writeFile(filename, readmeContent, (err) => {
-        if(err) {
-            console.error(err);
-        } else {
-            console.log(`${filename} succesfully vreated!`);
-        }
-    });
+fs.writeFile(`./output/${filename}`, readmeContent, (err) => {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log(`${filename} successfully created!`);
+  }
+});
+
 
 }
 
